@@ -5,20 +5,18 @@ class FirstNamedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(title: Text('FirstNamedPage')),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                  onPressed: () {
-                    Get.offNamed('/second');
-                  },
-                  child: Text('SecondNamedPage 이동')),
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(title: Text('FirstNamedPage')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  Get.offNamed('/second');
+                },
+                child: Text('SecondNamedPage 이동')),
+          ],
         ),
       ),
     );

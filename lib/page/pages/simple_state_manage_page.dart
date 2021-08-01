@@ -13,24 +13,22 @@ class simple_state_manage_page extends StatelessWidget {
   Widget build(BuildContext context) {
     //
     // Get.put(CountControllerWithGetX());//GetX의 컨트롤러 선언, 이렇게만 선언하면 어디에서든지 사용 가능
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(title: Text('단순상태관리')),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Expanded(
-                child: WithGetX(),
+    return Scaffold(
+      appBar: AppBar(title: Text('단순상태관리')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: WithGetX(),
+            ),
+            Expanded(
+              child: ChangeNotifierProvider<CountControllerWithProvider>(
+                create: (context) => CountControllerWithProvider(),
+                child: WithProvider(),
               ),
-              Expanded(
-                child: ChangeNotifierProvider<CountControllerWithProvider>(
-                  create: (context) => CountControllerWithProvider(),
-                  child: WithProvider(),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

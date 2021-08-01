@@ -6,25 +6,23 @@ class SecondNamedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(title: Text('SecondNamedPage')),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  child: Text('뒤로이동')),
-              ElevatedButton(
-                  onPressed: () {
-                    Get.offAllNamed('/');
-                  },
-                  child: Text('홈으로 이동')),
-            ],
-          ),
+    return Scaffold(
+      appBar: AppBar(title: Text('SecondNamedPage')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  Get.back();
+                },
+                child: Text('뒤로이동')),
+            ElevatedButton(
+                onPressed: () {
+                  Get.offAllNamed('/');
+                },
+                child: Text('홈으로 이동')),
+          ],
         ),
       ),
     );
