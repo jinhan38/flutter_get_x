@@ -7,7 +7,9 @@ import 'package:flutter_get_x/page/pages/ReactiveStateManagePage.dart';
 import 'package:flutter_get_x/page/pages/named/first.dart';
 import 'package:flutter_get_x/page/pages/named/second.dart';
 import 'package:flutter_get_x/page/pages/normal/first.dart';
+import 'package:flutter_get_x/page/pages/reactive/ReactivePage.dart';
 import 'package:flutter_get_x/page/pages/simple_state_manage_page.dart';
+import 'package:flutter_get_x/page/pages/update/UpdatePage.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -74,6 +76,16 @@ class MyApp extends StatelessWidget {
           //   },
           // ),
         ),
+        GetPage(
+          name: "/update",
+          page: () => UpdatePage(),
+          transition: Transition.rightToLeft,
+        ),
+        GetPage(
+          name: "//reactive",
+          page: () => ReactivePage(),
+          transition: Transition.rightToLeft,
+        ),
       ],
     );
   }
@@ -128,6 +140,16 @@ class MyHomePage extends StatelessWidget {
                 child: Text('바인딩'),
                 onPressed: () {
                   Get.toNamed("/binding");
+                }),
+            ElevatedButton(
+                child: Text('업데이트'),
+                onPressed: () {
+                  Get.toNamed("/update");
+                }),
+            ElevatedButton(
+                child: Text('Reactive'),
+                onPressed: () {
+                  Get.toNamed("/reactive");
                 }),
           ],
         ),
