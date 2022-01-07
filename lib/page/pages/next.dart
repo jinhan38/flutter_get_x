@@ -16,14 +16,13 @@ class NextPage extends StatelessWidget {
             Text('argument name : ${(Get.arguments as User).name}'),
             Text('argument job : ${(Get.arguments as User).job}'),
             Text('argument age : ${(Get.arguments as User).age}'),
-            // Text('argument name : ${Get.arguments['name']}'),
-            // Text('argument job : ${Get.arguments['job']}'),
-            // Text('argument age : ${Get.arguments['age']}'),
             ElevatedButton(
                 onPressed: () {
                   Get.back();
                 },
                 child: Text('뒤로이동')),
+
+            Text('create newbranch')
           ],
         ),
       ),
